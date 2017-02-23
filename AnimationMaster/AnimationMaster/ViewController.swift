@@ -23,17 +23,33 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    //FIXME:- 假数据
-    fileprivate var dataArray = ["1", "2", "3", "4"]
+    ///列表数据源
+    fileprivate var dataArray = [ListModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
    
+        createModelArray()
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentify)
         
         view.addSubview(tableView)
         
     }
+    
+    /// 创建数据源
+    fileprivate func createModelArray() {
+        
+        func add( _ controller: UIViewController, name: String) {
+            
+            dataArray.append(ListModel(name: name, controller: controller))
+        }
+        
+        add(CABaseController(), name: "CABaseAnimation")
+        
+    }
+    
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -51,9 +67,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.contentView.backgroundColor = UIColor(red: cellColor.0 / 255.0, green: cellColor.1 / 255.0, blue: cellColor.2 / 255.0, alpha: 1)
         }
-        
+        cell.textLabel?.text = dataArray[indexPath.row].name
         cell.accessoryType = .disclosureIndicator
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        navigationController?.pushViewController(dataArray[indexPath.row].controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -61,4 +82,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 60
     }
 }
+
+
 
