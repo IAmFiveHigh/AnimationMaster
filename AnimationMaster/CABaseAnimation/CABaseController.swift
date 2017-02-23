@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CABaseController: UIViewController {
+class CABaseController: BaseViewController {
 
     let tmpView = UIView()
     
@@ -21,6 +21,7 @@ class CABaseController: UIViewController {
         createUI()
     }
     
+    //MARK: - 布置界面
     fileprivate func createUI() {
         
         let titleArray = [BaseAnimationType.opacity.rawValue, BaseAnimationType.cornerRadius.rawValue, BaseAnimationType.transformX.rawValue, BaseAnimationType.positionY.rawValue]
@@ -46,7 +47,7 @@ class CABaseController: UIViewController {
         view.addSubview(tmpView)
     }
 
-    
+    //MARK: - 点击事件
     @objc fileprivate func buttonClick(sender: UIButton) {
         
         if let title = sender.titleLabel?.text {
@@ -58,23 +59,35 @@ class CABaseController: UIViewController {
                 opacityAnima.toValue = 0.5
                 opacityAnima.duration = 1.0
                 tmpView.layer.add(opacityAnima, forKey: title)
+                
+                //制造假象 动画执行完成后 真改变opaticy
+                perform(#selector(animationDidStop(_:finished:)), with: nil, afterDelay: 1.0)
             case BaseAnimationType.cornerRadius.rawValue:
                 
                 let cornerAnima = CABasicAnimation(keyPath: title)
                 cornerAnima.toValue = 20
                 cornerAnima.duration = 1.0
                 tmpView.layer.add(cornerAnima, forKey: title)
+                
+                //制造假象 动画执行完成后 执行showAlertView
+                perform(#selector(animationDidStop(_:finished:)), with: nil, afterDelay: 1.0)
             case BaseAnimationType.transformX.rawValue:
                 
                 let transformX = CABasicAnimation(keyPath: "transform.scale.x")
                 transformX.toValue = 0.5
                 transformX.duration = 1.0
+                
+                //设置代理 动画执行完毕后showAlertView
+                transformX.delegate = self
                 tmpView.layer.add(transformX, forKey: "transform.scale.x")
             case BaseAnimationType.positionY.rawValue:
                 
                 let positionY = CABasicAnimation(keyPath: "position.y")
                 positionY.toValue = 400
                 positionY.duration = 1.0
+                
+                //动画执行完毕后不回到原始样子
+                positionY.isRemovedOnCompletion = false
                 tmpView.layer.add(positionY, forKey: "position.y")
             default:
                 print("default")
@@ -82,8 +95,23 @@ class CABaseController: UIViewController {
         }
         
     }
+    
 }
 
+extension CABaseController: CAAnimationDelegate {
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+        let animation = anim as! CABasicAnimation
+        if animation.keyPath == BaseAnimationType.cornerRadius.rawValue || animation.keyPath == "transform.scale.x" {
+            showAlertWithMessage("动画执行完毕")
+        }else {
+            
+            tmpView.layer.opacity = 0.5
+        }
+        
+    }
+}
 enum BaseAnimationType: String {
     case opacity
     case cornerRadius

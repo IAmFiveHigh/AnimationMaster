@@ -40,12 +40,13 @@ class ViewController: UIViewController {
     /// 创建数据源
     fileprivate func createModelArray() {
         
-        func add( _ controller: UIViewController, name: String) {
+        func add( _ controller: BaseViewController, name: String) {
             
             dataArray.append(ListModel(name: name, controller: controller))
         }
         
         add(CABaseController(), name: "CABaseAnimation")
+        add(CAKeyFrameController(), name: "CAKeyFrameAnimation")
         
     }
     

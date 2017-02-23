@@ -11,9 +11,9 @@ import UIKit
 class ListModel: NSObject {
     
     let name: String
-    let controller: UIViewController
+    let controller: BaseViewController
     
-    init(name: String, controller: UIViewController) {
+    init(name: String, controller: BaseViewController) {
         self.name = name
         self.controller = controller
     }
