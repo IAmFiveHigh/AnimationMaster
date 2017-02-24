@@ -67,9 +67,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row % 2 == 1 {
             
             cell.contentView.backgroundColor = UIColor(red: cellColor.0 / 255.0, green: cellColor.1 / 255.0, blue: cellColor.2 / 255.0, alpha: 1)
+            cell.textLabel?.backgroundColor = UIColor(red: cellColor.0 / 255.0, green: cellColor.1 / 255.0, blue: cellColor.2 / 255.0, alpha: 1)
         }
         cell.textLabel?.text = dataArray[indexPath.row].name
         cell.accessoryType = .disclosureIndicator
+        cell.selectionStyle = .none
         return cell
     }
     
