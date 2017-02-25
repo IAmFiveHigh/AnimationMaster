@@ -16,6 +16,7 @@
 		461C20B01E5EDB9F00BB6446 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C20AF1E5EDB9F00BB6446 /* ListModel.swift */; };
 		461C20B61E5EF49000BB6446 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C20B51E5EF49000BB6446 /* BaseViewController.swift */; };
 		461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C20BA1E5EFD1C00BB6446 /* CAKeyFrameController.swift */; };
+		462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B1FCB1E61D9A6004074CC /* KeyFrame.swift */; };
 		468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */; };
 		468EF85B1E604FFC009DBB2A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EF8591E604FFC009DBB2A /* CircleView.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		461C20AF1E5EDB9F00BB6446 /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListModel.swift; path = AnimationMaster/ListModel.swift; sourceTree = "<group>"; };
 		461C20B51E5EF49000BB6446 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		461C20BA1E5EFD1C00BB6446 /* CAKeyFrameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAKeyFrameController.swift; sourceTree = "<group>"; };
+		462B1FCB1E61D9A6004074CC /* KeyFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFrame.swift; sourceTree = "<group>"; };
 		468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatCircleController.swift; sourceTree = "<group>"; };
 		468EF8591E604FFC009DBB2A /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 			children = (
 				468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */,
 				468EF8591E604FFC009DBB2A /* CircleView.swift */,
+				462B1FCB1E61D9A6004074CC /* KeyFrame.swift */,
 			);
 			name = CircleViewAnimation;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				461C20AE1E5ECC1E00BB6446 /* CABaseController.swift in Sources */,
 				461C1F771E5D63D700BB6446 /* ViewController.swift in Sources */,
 				468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */,
+				462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */,
 				461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */,
 				461C1F751E5D63D700BB6446 /* AppDelegate.swift in Sources */,
 				461C20B01E5EDB9F00BB6446 /* ListModel.swift in Sources */,

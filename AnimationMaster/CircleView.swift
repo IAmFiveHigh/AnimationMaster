@@ -78,3 +78,25 @@ extension CircleView {
         }
     }
 }
+
+//MARK: - 动画
+extension CircleView {
+    
+    func strokeEnd(value: CGFloat, duration: TimeInterval) {
+        
+        var strokeValue = value
+        if strokeValue > 1 {
+            
+            strokeValue = 1
+        }else if strokeValue < 0 {
+            
+            strokeValue = 0
+        }
+        
+        let animation = CAKeyframeAnimation(keyPath: "strokeEnd")
+        animation.duration = duration
+        animation.values = KeyFrame(frameCount: Int(duration) * 60).frameValues(fromValue: 0, toValue: strokeValue)
+        shapeLayer.strokeEnd = CGFloat(strokeValue)
+        shapeLayer.add(animation, forKey: "strokeEnd")
+    }
+}
