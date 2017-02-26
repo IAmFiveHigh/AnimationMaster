@@ -86,5 +86,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
+struct ListModel {
+    
+    let name: String
+    let controller: BaseViewController
+    
+    init(name: String, controller: BaseViewController) {
+        self.name = name
+        self.controller = controller
+    }
+}
 
