@@ -18,6 +18,8 @@
 		462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B1FCB1E61D9A6004074CC /* KeyFrame.swift */; };
 		468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */; };
 		468EF85B1E604FFC009DBB2A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EF8591E604FFC009DBB2A /* CircleView.swift */; };
+		46C421671E644A7A005B8A01 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C421661E644A7A005B8A01 /* ProgressController.swift */; };
+		46C421691E644A99005B8A01 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C421681E644A99005B8A01 /* ProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		462B1FCB1E61D9A6004074CC /* KeyFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFrame.swift; sourceTree = "<group>"; };
 		468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatCircleController.swift; sourceTree = "<group>"; };
 		468EF8591E604FFC009DBB2A /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		46C421661E644A7A005B8A01 /* ProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
+		46C421681E644A99005B8A01 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				46C421651E644A4A005B8A01 /* ProgressViewController */,
 				468EF8571E604FEC009DBB2A /* CircleViewAnimation */,
 				461C20B71E5EFC9E00BB6446 /* CAKeyFrameAnimation */,
 				461C20B41E5EF47F00BB6446 /* BaseViewController */,
@@ -130,6 +135,15 @@
 			name = CircleViewAnimation;
 			sourceTree = "<group>";
 		};
+		46C421651E644A4A005B8A01 /* ProgressViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46C421661E644A7A005B8A01 /* ProgressController.swift */,
+				46C421681E644A99005B8A01 /* ProgressView.swift */,
+			);
+			name = ProgressViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,7 +222,9 @@
 				461C20AE1E5ECC1E00BB6446 /* CABaseController.swift in Sources */,
 				461C1F771E5D63D700BB6446 /* ViewController.swift in Sources */,
 				468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */,
+				46C421671E644A7A005B8A01 /* ProgressController.swift in Sources */,
 				462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */,
+				46C421691E644A99005B8A01 /* ProgressView.swift in Sources */,
 				461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */,
 				461C1F751E5D63D700BB6446 /* AppDelegate.swift in Sources */,
 			);
