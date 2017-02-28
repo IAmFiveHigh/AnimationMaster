@@ -10,6 +10,8 @@ import UIKit
 
 class AnimatCircleController: BaseViewController {
     
+    var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +33,7 @@ class AnimatCircleController: BaseViewController {
     
     fileprivate func createTimer() {
     
-        let timer = Timer(timeInterval: 3.0, target: self, selector: #selector(timeAction), userInfo: nil, repeats: true)
+        timer = Timer(timeInterval: 3.0, target: self, selector: #selector(timeAction), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
     }
     
@@ -43,5 +45,14 @@ class AnimatCircleController: BaseViewController {
         circle.strokeEnd(value: percent, duration: 3.0)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.fireDate = Date.distantFuture
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timer.fireDate = Date.distantPast
+    }
     
 }

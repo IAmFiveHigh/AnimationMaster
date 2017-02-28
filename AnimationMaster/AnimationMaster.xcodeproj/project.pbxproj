@@ -176,7 +176,7 @@
 				TargetAttributes = {
 					461C1F701E5D63D700BB6446 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = S3MVLW789N;
+						DevelopmentTeam = K8B9VX64QJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -347,7 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S3MVLW789N;
+				DEVELOPMENT_TEAM = K8B9VX64QJ;
 				INFOPLIST_FILE = AnimationMaster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LHC.AnimationMaster;
@@ -360,7 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S3MVLW789N;
+				DEVELOPMENT_TEAM = K8B9VX64QJ;
 				INFOPLIST_FILE = AnimationMaster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LHC.AnimationMaster;
