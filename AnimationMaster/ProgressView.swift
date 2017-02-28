@@ -10,12 +10,68 @@ import UIKit
 
 class ProgressView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    fileprivate let text: String
+    fileprivate let timeInterval: TimeInterval
+    fileprivate let backColor: UIColor
+    
+    var timer: Timer!
+    fileprivate var upView: UIView!
+    
+    init(frame: CGRect, timeInterval: TimeInterval, text: String, backColor: UIColor) {
+        
+        self.text = text
+        self.timeInterval = timeInterval
+        self.backColor = backColor
+        
+        super.init(frame: frame)
+        
+        self.backgroundColor = UIColor.white
+        
+        setupUI()
+        
+        setTimer()
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    fileprivate func setupUI() {
+    
+        let downLabel = UILabel(frame: bounds)
+        downLabel.text = text
+        downLabel.textColor = backColor
+        downLabel.textAlignment = .center
+        downLabel.font = UIFont.systemFont(ofSize: height() / 2)
+        self.addSubview(downLabel)
+        
+        upView = UIView(frame: bounds)
+        upView.backgroundColor = backColor
+        upView.layer.masksToBounds = true
+        self.addSubview(upView)
+        
+        let upLabel = UILabel(frame: bounds)
+        upLabel.text = text
+        upLabel.textColor = UIColor.white
+        upLabel.textAlignment = .center
+        upLabel.font = UIFont.systemFont(ofSize: height() / 2)
+        upView.addSubview(upLabel)
+    }
+    
+    fileprivate func setTimer() {
+        
+        timer = Timer(timeInterval: timeInterval, target: self, selector: #selector(timeAction), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
+        
+    }
+    
+    @objc fileprivate func timeAction() {
+        
+        let percent = CGFloat(arc4random() % 100) / 100
+        UIView.animate(withDuration: timeInterval, animations: {
+            
+            self.upView.setWidth(self.width() * percent)
+        })
+    }
 
 }

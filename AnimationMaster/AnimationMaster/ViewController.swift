@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         add(CABaseController(), name: "CABaseAnimation")
         add(CAKeyFrameController(), name: "CAKeyFrameAnimation")
         add(AnimatCircleController(), name: "CircleViewAnimation")
+        add(ProgressController(), name: "ProgressViewAnimation")
     }
     
     
