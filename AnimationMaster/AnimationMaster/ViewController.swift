@@ -49,6 +49,7 @@ class ViewController: UIViewController {
         add(CAKeyFrameController(), name: "CAKeyFrameAnimation")
         add(AnimatCircleController(), name: "CircleViewAnimation")
         add(ProgressController(), name: "ProgressViewAnimation")
+        add(SelectButtonController(), name: "SelectButtonAnimation")
     }
     
     
