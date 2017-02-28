@@ -17,6 +17,13 @@ class ProgressView: UIView {
     var timer: Timer!
     fileprivate var upView: UIView!
     
+    /// 创建方法
+    ///
+    /// - Parameters:
+    ///   - frame: frame
+    ///   - timeInterval: 变化时间间隔
+    ///   - text: 内容
+    ///   - backColor: 背景色和字体颜色
     init(frame: CGRect, timeInterval: TimeInterval, text: String, backColor: UIColor) {
         
         self.text = text
@@ -74,4 +81,22 @@ class ProgressView: UIView {
         })
     }
 
+    
+    /// 停止动画
+    func timerStop() {
+        
+        timer.fireDate = Date.distantFuture
+    }
+    
+    /// 继续动画
+    func timerContinue() {
+        
+        timer.fireDate = Date.distantPast
+    }
+    
+    /// 移除timer
+    func timerDealloc() {
+        
+        timer.invalidate()
+    }
 }
