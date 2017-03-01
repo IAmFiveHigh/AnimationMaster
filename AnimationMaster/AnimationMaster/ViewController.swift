@@ -45,12 +45,12 @@ class ViewController: UIViewController {
             dataArray.append(ListModel(name: name, controller: controller))
         }
         
-        add(CABaseController(), name: "CABaseAnimation")
-        add(CAKeyFrameController(), name: "CAKeyFrameAnimation")
-        add(AnimatCircleController(), name: "CircleViewAnimation")
-        add(ProgressController(), name: "ProgressViewAnimation")
-        add(SelectButtonController(), name: "SelectButtonAnimation")
-        add(LoadingViewController(), name: "LoadingViewAnimation")
+        add(CABaseController(), name: "基础动画")
+        add(CAKeyFrameController(), name: "关键帧动画")
+        add(AnimatCircleController(), name: "动画圆环")
+        add(ProgressController(), name: "混色字进度动画")
+        add(SelectButtonController(), name: "选中按钮动画")
+        add(LoadingViewController(), name: "加载等待动画")
     }
     
     
