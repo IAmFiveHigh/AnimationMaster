@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         add(AnimatCircleController(), name: "CircleViewAnimation")
         add(ProgressController(), name: "ProgressViewAnimation")
         add(SelectButtonController(), name: "SelectButtonAnimation")
+        add(LoadingViewController(), name: "LoadingViewAnimation")
     }
     
     

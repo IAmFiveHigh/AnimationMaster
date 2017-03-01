@@ -15,7 +15,8 @@ class SelectButtonController: BaseViewController {
 
         
         let button = OpacityButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40), title: "opacityButton", titleColor: UIColor.white)
-        button.center = view.center
+        button.setCenterX(view.center.x)
+        button.setCenterY(view.center.y + 100)
         view.addSubview(button)
     }
 

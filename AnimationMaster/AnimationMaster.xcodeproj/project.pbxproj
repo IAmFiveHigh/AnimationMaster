@@ -16,6 +16,13 @@
 		461C20B61E5EF49000BB6446 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C20B51E5EF49000BB6446 /* BaseViewController.swift */; };
 		461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C20BA1E5EFD1C00BB6446 /* CAKeyFrameController.swift */; };
 		462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B1FCB1E61D9A6004074CC /* KeyFrame.swift */; };
+		46600E021E66781B0059BB0E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E011E66781B0059BB0E /* SelectedButton.swift */; };
+		46600E041E66788C0059BB0E /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = 46600E031E66788C0059BB0E /* c.png */; };
+		46600E321E6692550059BB0E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E311E6692550059BB0E /* LoadingViewController.swift */; };
+		46600E371E6692700059BB0E /* 120x120-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 46600E341E6692700059BB0E /* 120x120-1.png */; };
+		46600E381E6692700059BB0E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E351E6692700059BB0E /* LoadingView.swift */; };
+		46600E391E6692700059BB0E /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E361E6692700059BB0E /* WaveView.swift */; };
+		46600E3B1E66A44D0059BB0E /* 120x120-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 46600E3A1E66A44D0059BB0E /* 120x120-2.png */; };
 		468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */; };
 		468EF85B1E604FFC009DBB2A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EF8591E604FFC009DBB2A /* CircleView.swift */; };
 		46C421671E644A7A005B8A01 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C421661E644A7A005B8A01 /* ProgressController.swift */; };
@@ -36,6 +43,13 @@
 		461C20B51E5EF49000BB6446 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		461C20BA1E5EFD1C00BB6446 /* CAKeyFrameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAKeyFrameController.swift; sourceTree = "<group>"; };
 		462B1FCB1E61D9A6004074CC /* KeyFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFrame.swift; sourceTree = "<group>"; };
+		46600E011E66781B0059BB0E /* SelectedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
+		46600E031E66788C0059BB0E /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
+		46600E311E6692550059BB0E /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		46600E341E6692700059BB0E /* 120x120-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120x120-1.png"; sourceTree = "<group>"; };
+		46600E351E6692700059BB0E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		46600E361E6692700059BB0E /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		46600E3A1E66A44D0059BB0E /* 120x120-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120x120-2.png"; sourceTree = "<group>"; };
 		468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatCircleController.swift; sourceTree = "<group>"; };
 		468EF8591E604FFC009DBB2A /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		46C421661E644A7A005B8A01 /* ProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
@@ -58,6 +72,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				46600E301E6692330059BB0E /* LoadingViewAnimation */,
 				46EB697A1E654F070000A98B /* SelectButtonAnimation */,
 				46C421651E644A4A005B8A01 /* ProgressViewController */,
 				468EF8571E604FEC009DBB2A /* CircleViewAnimation */,
@@ -130,6 +145,26 @@
 			name = CAKeyFrameAnimation;
 			sourceTree = "<group>";
 		};
+		46600E301E6692330059BB0E /* LoadingViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				46600E331E6692700059BB0E /* LoadingView */,
+				46600E311E6692550059BB0E /* LoadingViewController.swift */,
+			);
+			name = LoadingViewAnimation;
+			sourceTree = "<group>";
+		};
+		46600E331E6692700059BB0E /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				46600E3A1E66A44D0059BB0E /* 120x120-2.png */,
+				46600E341E6692700059BB0E /* 120x120-1.png */,
+				46600E351E6692700059BB0E /* LoadingView.swift */,
+				46600E361E6692700059BB0E /* WaveView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
 		468EF8571E604FEC009DBB2A /* CircleViewAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +189,8 @@
 			children = (
 				46EB697B1E654F3F0000A98B /* SelectButtonController.swift */,
 				46EB697D1E6553130000A98B /* OpacityButton.swift */,
+				46600E011E66781B0059BB0E /* SelectedButton.swift */,
+				46600E031E66788C0059BB0E /* c.png */,
 			);
 			name = SelectButtonAnimation;
 			sourceTree = "<group>";
@@ -218,8 +255,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46600E041E66788C0059BB0E /* c.png in Resources */,
+				46600E3B1E66A44D0059BB0E /* 120x120-2.png in Resources */,
 				461C1F7F1E5D63D700BB6446 /* LaunchScreen.storyboard in Resources */,
 				461C1F7C1E5D63D700BB6446 /* Assets.xcassets in Resources */,
+				46600E371E6692700059BB0E /* 120x120-1.png in Resources */,
 				461C1F7A1E5D63D700BB6446 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,10 +278,14 @@
 				461C1F771E5D63D700BB6446 /* ViewController.swift in Sources */,
 				468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */,
 				46C421671E644A7A005B8A01 /* ProgressController.swift in Sources */,
+				46600E391E6692700059BB0E /* WaveView.swift in Sources */,
 				462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */,
+				46600E381E6692700059BB0E /* LoadingView.swift in Sources */,
 				46C421691E644A99005B8A01 /* ProgressView.swift in Sources */,
 				461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */,
 				461C1F751E5D63D700BB6446 /* AppDelegate.swift in Sources */,
+				46600E321E6692550059BB0E /* LoadingViewController.swift in Sources */,
+				46600E021E66781B0059BB0E /* SelectedButton.swift in Sources */,
 				46EB697E1E6553130000A98B /* OpacityButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
