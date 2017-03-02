@@ -51,6 +51,7 @@ class ViewController: UIViewController {
         add(ProgressController(), name: "混色字进度动画")
         add(SelectButtonController(), name: "选中按钮动画")
         add(LoadingViewController(), name: "加载等待动画")
+        add(NumberAnimationController(), name: "变化数值动画")
     }
     
     

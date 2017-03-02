@@ -23,6 +23,8 @@
 		46600E381E6692700059BB0E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E351E6692700059BB0E /* LoadingView.swift */; };
 		46600E391E6692700059BB0E /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E361E6692700059BB0E /* WaveView.swift */; };
 		46600E3B1E66A44D0059BB0E /* 120x120-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 46600E3A1E66A44D0059BB0E /* 120x120-2.png */; };
+		46600E3E1E66C8030059BB0E /* NumberAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E3D1E66C8030059BB0E /* NumberAnimationController.swift */; };
+		46600E601E66E4640059BB0E /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E5F1E66E4640059BB0E /* CountingLabel.swift */; };
 		468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */; };
 		468EF85B1E604FFC009DBB2A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EF8591E604FFC009DBB2A /* CircleView.swift */; };
 		46C421671E644A7A005B8A01 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C421661E644A7A005B8A01 /* ProgressController.swift */; };
@@ -50,6 +52,8 @@
 		46600E351E6692700059BB0E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		46600E361E6692700059BB0E /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		46600E3A1E66A44D0059BB0E /* 120x120-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120x120-2.png"; sourceTree = "<group>"; };
+		46600E3D1E66C8030059BB0E /* NumberAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberAnimationController.swift; sourceTree = "<group>"; };
+		46600E5F1E66E4640059BB0E /* CountingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
 		468EF8581E604FFC009DBB2A /* AnimatCircleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatCircleController.swift; sourceTree = "<group>"; };
 		468EF8591E604FFC009DBB2A /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		46C421661E644A7A005B8A01 /* ProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				46600E3C1E66C7E60059BB0E /* NumberAnimation */,
 				46600E301E6692330059BB0E /* LoadingViewAnimation */,
 				46EB697A1E654F070000A98B /* SelectButtonAnimation */,
 				46C421651E644A4A005B8A01 /* ProgressViewController */,
@@ -163,6 +168,15 @@
 				46600E361E6692700059BB0E /* WaveView.swift */,
 			);
 			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		46600E3C1E66C7E60059BB0E /* NumberAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				46600E3D1E66C8030059BB0E /* NumberAnimationController.swift */,
+				46600E5F1E66E4640059BB0E /* CountingLabel.swift */,
+			);
+			name = NumberAnimation;
 			sourceTree = "<group>";
 		};
 		468EF8571E604FEC009DBB2A /* CircleViewAnimation */ = {
@@ -278,11 +292,13 @@
 				461C1F771E5D63D700BB6446 /* ViewController.swift in Sources */,
 				468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */,
 				46C421671E644A7A005B8A01 /* ProgressController.swift in Sources */,
+				46600E3E1E66C8030059BB0E /* NumberAnimationController.swift in Sources */,
 				46600E391E6692700059BB0E /* WaveView.swift in Sources */,
 				462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */,
 				46600E381E6692700059BB0E /* LoadingView.swift in Sources */,
 				46C421691E644A99005B8A01 /* ProgressView.swift in Sources */,
 				461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */,
+				46600E601E66E4640059BB0E /* CountingLabel.swift in Sources */,
 				461C1F751E5D63D700BB6446 /* AppDelegate.swift in Sources */,
 				46600E321E6692550059BB0E /* LoadingViewController.swift in Sources */,
 				46600E021E66781B0059BB0E /* SelectedButton.swift in Sources */,
