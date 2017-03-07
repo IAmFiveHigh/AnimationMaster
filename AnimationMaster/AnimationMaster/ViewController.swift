@@ -31,7 +31,7 @@ class ViewController: UIViewController {
    
         createModelArray()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentify)
+        tableView.register(listCell.self, forCellReuseIdentifier: cellIdentify)
         
         view.addSubview(tableView)
         
@@ -52,6 +52,11 @@ class ViewController: UIViewController {
         add(SelectButtonController(), name: "选中按钮动画")
         add(LoadingViewController(), name: "加载等待动画")
         add(NumberAnimationController(), name: "变化数值动画")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
     }
     
     
@@ -66,13 +71,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify, for: indexPath) as! listCell
         
-        if indexPath.row % 2 == 1 {
-            
-            cell.contentView.backgroundColor = UIColor(red: cellColor.0 / 255.0, green: cellColor.1 / 255.0, blue: cellColor.2 / 255.0, alpha: 1)
-            cell.textLabel?.backgroundColor = UIColor(red: cellColor.0 / 255.0, green: cellColor.1 / 255.0, blue: cellColor.2 / 255.0, alpha: 1)
-        }
+        cell.setBackgroundColor(with: indexPath)
         cell.textLabel?.text = dataArray[indexPath.row].name
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
@@ -87,6 +88,45 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 60
+    }
+}
+
+class listCell: UITableViewCell {
+    
+    fileprivate func setBackgroundColor(with indexPath: IndexPath) {
+        
+        if indexPath.row % 2 == 1 {
+            
+            contentView.backgroundColor = UIColor(red: cellColor.0 / 255.0, green: cellColor.1 / 255.0, blue: cellColor.2 / 255.0, alpha: 1)
+            textLabel?.backgroundColor = UIColor(red: cellColor.0 / 255.0, green: cellColor.1 / 255.0, blue: cellColor.2 / 255.0, alpha: 1)
+        }else {
+            contentView.backgroundColor = UIColor.white
+            textLabel?.backgroundColor = UIColor.white
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
+        super.setHighlighted(highlighted, animated: animated)
+        
+        if isHighlighted {
+            
+            let basicAnimation = CABasicAnimation(keyPath: "transform.scale")
+            basicAnimation.toValue = CGSize(width: 0.95, height: 0.95)
+            basicAnimation.duration = 0.2
+            basicAnimation.isRemovedOnCompletion = false
+            basicAnimation.fillMode = kCAFillModeForwards
+            textLabel?.layer.add(basicAnimation, forKey: nil)
+        }else {
+            
+            let spring = CASpringAnimation(keyPath: "transform.scale")
+            spring.toValue = CGSize(width: 1, height: 1)
+            spring.duration = 0.2
+            spring.damping = 1
+            spring.isRemovedOnCompletion = false
+            spring.fillMode = kCAFillModeForwards
+            textLabel?.layer.add(spring, forKey: nil);
+        }
     }
 }
 
