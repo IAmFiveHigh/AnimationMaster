@@ -57,7 +57,18 @@ class ViewController: UIViewController {
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+        add(BaseViewController(), name: "暂时占位Cell")
+
     }
+    
     
     
 }
@@ -89,6 +100,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         return 60
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.textLabel?.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        UIView.animateKeyframes(withDuration: 0.1, delay: 0.1, options: .allowUserInteraction, animations: {
+            cell.textLabel?.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
+    }
+    
 }
 
 class listCell: UITableViewCell {
@@ -113,19 +133,18 @@ class listCell: UITableViewCell {
             
             let basicAnimation = CABasicAnimation(keyPath: "transform.scale")
             basicAnimation.toValue = CGSize(width: 0.95, height: 0.95)
-            basicAnimation.duration = 0.2
+            basicAnimation.duration = 0.1
             basicAnimation.isRemovedOnCompletion = false
             basicAnimation.fillMode = kCAFillModeForwards
             textLabel?.layer.add(basicAnimation, forKey: nil)
         }else {
             
-            let spring = CASpringAnimation(keyPath: "transform.scale")
+            let spring = CABasicAnimation(keyPath: "transform.scale")
             spring.toValue = CGSize(width: 1, height: 1)
-            spring.duration = 0.2
-            spring.damping = 1
+            spring.duration = 0.1
             spring.isRemovedOnCompletion = false
             spring.fillMode = kCAFillModeForwards
-            textLabel?.layer.add(spring, forKey: nil);
+            textLabel?.layer.add(spring, forKey: nil)
         }
     }
 }

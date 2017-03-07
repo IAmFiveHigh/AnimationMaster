@@ -23,6 +23,15 @@ class SelectButtonController: BaseViewController {
         button1.setCenterX(view.center.x)
         button1.setCenterY(view.center.y + 100)
         view.addSubview(button1)
+        
+        let button3 = HighlightButton(type: .custom)
+        button3.frame = CGRect(x: 0, y: 0, width: 100, height: 60)
+        button3.setTitle("highlight", for: .normal)
+        button3.setTitleColor(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), for: .normal)
+        button3.setCenterX(button1.centerX())
+        button3.setCenterY(button1.centerY() + 100)
+        button3.titleLabel?.textAlignment = .center
+        view.addSubview(button3)
     }
 
 }

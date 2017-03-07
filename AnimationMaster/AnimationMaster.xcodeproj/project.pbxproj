@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C8D271E6E9252007BB2E7 /* HighlightButton.swift */; };
 		461C1F751E5D63D700BB6446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C1F741E5D63D700BB6446 /* AppDelegate.swift */; };
 		461C1F771E5D63D700BB6446 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C1F761E5D63D700BB6446 /* ViewController.swift */; };
 		461C1F7A1E5D63D700BB6446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461C1F781E5D63D700BB6446 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		460C8D271E6E9252007BB2E7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		461C1F711E5D63D700BB6446 /* AnimationMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		461C1F741E5D63D700BB6446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AnimationMaster/AppDelegate.swift; sourceTree = "<group>"; };
 		461C1F761E5D63D700BB6446 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = AnimationMaster/ViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				46EB697D1E6553130000A98B /* OpacityButton.swift */,
 				46600E011E66781B0059BB0E /* SelectedButton.swift */,
 				46600E031E66788C0059BB0E /* c.png */,
+				460C8D271E6E9252007BB2E7 /* HighlightButton.swift */,
 			);
 			name = SelectButtonAnimation;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				46600E3E1E66C8030059BB0E /* NumberAnimationController.swift in Sources */,
 				46600E391E6692700059BB0E /* WaveView.swift in Sources */,
 				462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */,
+				460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */,
 				46600E381E6692700059BB0E /* LoadingView.swift in Sources */,
 				46C421691E644A99005B8A01 /* ProgressView.swift in Sources */,
 				461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */,
