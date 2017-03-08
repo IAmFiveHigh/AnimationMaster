@@ -25,6 +25,21 @@ class AvatarAnimationController: BaseViewController {
         createEffectView()
         
         createAvatar()
+        
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 60)
+        button.setCenterX(view.centerX())
+        button.setCenterY(view.centerY() + 100)
+        button.setTitle("dianwo", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), for: .normal)
+        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+        view.addSubview(button)
+    }
+    
+    @objc fileprivate func buttonClick() {
+        
+        blurEffectView.isHidden = false
+        avatar.bubbleAction()
     }
     
     fileprivate func createImageView() {
@@ -40,18 +55,19 @@ class AvatarAnimationController: BaseViewController {
         let blurEffect = UIBlurEffect(style: .light)
         
         blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 400)
-        blurEffectView.alpha = 1
+        blurEffectView.frame = view.bounds
+        blurEffectView.alpha = 0.9
         blurEffectView.isHidden = true
         view.addSubview(blurEffectView)
     }
     
     fileprivate func createAvatar() {
         
-        avatar = AvatarView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), image: "avatar.jpg")
+        avatar = AvatarView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), image: "avatar.jpg", bubbleArray: ["111","1881","331","221"])
         avatar.setCenterX(view.centerX())
         avatar.setCenterY(120)
         view.addSubview(avatar)
+        
     }
     
     
