@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         add(SelectButtonController(), name: "选中按钮动画")
         add(LoadingViewController(), name: "加载等待动画")
         add(NumberAnimationController(), name: "变化数值动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(AvatarAnimationController(), name: "头像下拉动画")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")

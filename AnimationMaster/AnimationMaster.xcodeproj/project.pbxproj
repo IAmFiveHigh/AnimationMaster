@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C8D271E6E9252007BB2E7 /* HighlightButton.swift */; };
+		461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */; };
+		461AE5581E6FFD48007E06F6 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5571E6FFD48007E06F6 /* AvatarView.swift */; };
+		461AE57A1E700185007E06F6 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 461AE5791E700185007E06F6 /* background.jpg */; };
+		461AE57E1E70065C007E06F6 /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 461AE57D1E70065C007E06F6 /* avatar.jpg */; };
 		461C1F751E5D63D700BB6446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C1F741E5D63D700BB6446 /* AppDelegate.swift */; };
 		461C1F771E5D63D700BB6446 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C1F761E5D63D700BB6446 /* ViewController.swift */; };
 		461C1F7A1E5D63D700BB6446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461C1F781E5D63D700BB6446 /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		460C8D271E6E9252007BB2E7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
+		461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarAnimationController.swift; sourceTree = "<group>"; };
+		461AE5571E6FFD48007E06F6 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		461AE5791E700185007E06F6 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		461AE57D1E70065C007E06F6 /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
 		461C1F711E5D63D700BB6446 /* AnimationMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		461C1F741E5D63D700BB6446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AnimationMaster/AppDelegate.swift; sourceTree = "<group>"; };
 		461C1F761E5D63D700BB6446 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = AnimationMaster/ViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +83,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461AE5531E6FE80A007E06F6 /* AvatarViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				461AE5561E6FFD29007E06F6 /* AvatarView */,
+				461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */,
+			);
+			name = AvatarViewAnimation;
+			sourceTree = "<group>";
+		};
+		461AE5561E6FFD29007E06F6 /* AvatarView */ = {
+			isa = PBXGroup;
+			children = (
+				461AE57D1E70065C007E06F6 /* avatar.jpg */,
+				461AE5791E700185007E06F6 /* background.jpg */,
+				461AE5571E6FFD48007E06F6 /* AvatarView.swift */,
+			);
+			name = AvatarView;
+			sourceTree = "<group>";
+		};
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				461AE5531E6FE80A007E06F6 /* AvatarViewAnimation */,
 				46600E3C1E66C7E60059BB0E /* NumberAnimation */,
 				46600E301E6692330059BB0E /* LoadingViewAnimation */,
 				46EB697A1E654F070000A98B /* SelectButtonAnimation */,
@@ -272,11 +300,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				461AE57E1E70065C007E06F6 /* avatar.jpg in Resources */,
 				46600E041E66788C0059BB0E /* c.png in Resources */,
 				46600E3B1E66A44D0059BB0E /* 120x120-2.png in Resources */,
 				461C1F7F1E5D63D700BB6446 /* LaunchScreen.storyboard in Resources */,
 				461C1F7C1E5D63D700BB6446 /* Assets.xcassets in Resources */,
 				46600E371E6692700059BB0E /* 120x120-1.png in Resources */,
+				461AE57A1E700185007E06F6 /* background.jpg in Resources */,
 				461C1F7A1E5D63D700BB6446 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +334,9 @@
 				461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */,
 				46600E601E66E4640059BB0E /* CountingLabel.swift in Sources */,
 				461C1F751E5D63D700BB6446 /* AppDelegate.swift in Sources */,
+				461AE5581E6FFD48007E06F6 /* AvatarView.swift in Sources */,
 				46600E321E6692550059BB0E /* LoadingViewController.swift in Sources */,
+				461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */,
 				46600E021E66781B0059BB0E /* SelectedButton.swift in Sources */,
 				46EB697E1E6553130000A98B /* OpacityButton.swift in Sources */,
 			);
