@@ -119,6 +119,9 @@ class AvatarView: UIView {
     //MARK: - 气泡展开
     fileprivate func bubbleAction()  {
         
+        secondFloor.isHidden = false
+        thirdFloor.isHidden = false
+        
         //根据bubble数量获取分得的单位角度大小
         let unite = CGFloat(M_PI * 2 / Double(bubbleViewArray.count))
         
@@ -143,7 +146,6 @@ class AvatarView: UIView {
             bubbleTmpPointArray.append(CGPoint(x: pointX, y: pointY))
             
             
-            
             let animation = CAKeyframeAnimation(keyPath: "position")
             animation.duration = 0.5
             animation.path = layer.path
@@ -164,6 +166,9 @@ class AvatarView: UIView {
     
     //MARK: - 气泡折叠收好
     fileprivate func bubbleActionCancel() {
+        
+        secondFloor.isHidden = true
+        thirdFloor.isHidden = true
         
         //动画执行时不能接受新指令
         actionAble = false
