@@ -21,6 +21,37 @@ class AvatarView: UIView {
     
     fileprivate var bubbleViewArray = [AvatarBubble]()
     
+    /// 动画可执行
+    fileprivate var actionAble: Bool = true
+    
+    var isUnfold: Bool = false {
+        didSet {
+            
+            guard actionAble else {
+                
+                isUnfold = oldValue
+                return
+            }
+            
+            guard isUnfold != oldValue else {
+                
+                isUnfold = oldValue
+                return
+            }
+            
+            if isUnfold {
+                
+                bubbleAction()
+            }else {
+                
+                bubbleActionCancel()
+            }
+        }
+    }
+    
+    //气泡移动后位置的数组
+    fileprivate var bubbleTmpPointArray = [CGPoint]()
+    
     init(frame: CGRect, image: String, bubbleArray: [String]) {
         
         imageView = UIImageView(image: UIImage(named: image))
@@ -85,24 +116,33 @@ class AvatarView: UIView {
         }
     }
     
-    func bubbleAction()  {
+    //MARK: - 气泡展开
+    fileprivate func bubbleAction()  {
         
         //根据bubble数量获取分得的单位角度大小
         let unite = CGFloat(M_PI * 2 / Double(bubbleViewArray.count))
         
         //设置bubble抛出距离
-        let length = width() + 30
+        let length = width()
         
         //记录的角度
         var angle = unite
 
+        //动画执行时不能接受新指令
+        actionAble = false
+        
         for bubble in bubbleViewArray {
-            
-            let pointX = sin(angle) * length + centerX()
-            let pointY = -cos(angle) * length + centerY()
+
+            let pointX = sin(angle) * length + width() / 2
+            let pointY = -cos(angle) * length + height() / 2
             
             //根据初始center和目的地point获取路径layer
             let layer = createBezier(originPoint: bubble.center, destinationPoint: CGPoint(x: pointX, y: pointY))
+            
+            //保存每个目的地point
+            bubbleTmpPointArray.append(CGPoint(x: pointX, y: pointY))
+            
+            
             
             let animation = CAKeyframeAnimation(keyPath: "position")
             animation.duration = 0.5
@@ -114,6 +154,44 @@ class AvatarView: UIView {
             angle += unite
         }
         
+        //动画执行完毕后重新可接受新指令
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+            
+            self.actionAble = true
+        })
+        
+    }
+    
+    //MARK: - 气泡折叠收好
+    fileprivate func bubbleActionCancel() {
+        
+        //动画执行时不能接受新指令
+        actionAble = false
+        
+        
+        guard bubbleTmpPointArray.count > 0 else {
+            return
+        }
+        
+        for (index,bubble) in bubbleViewArray.enumerated() {
+            
+            let layer = createBezier(originPoint: bubbleTmpPointArray[index], destinationPoint: CGPoint(x: width() / 2, y: height() / 2))
+            
+            let animation = CAKeyframeAnimation(keyPath: "position")
+            animation.duration = 0.5
+            animation.path = layer.path
+            animation.isRemovedOnCompletion = false
+            animation.fillMode = kCAFillModeForwards
+            bubble.layer.add(animation, forKey: nil)
+        }
+        
+        bubbleTmpPointArray.removeAll()
+        
+        //动画执行完毕后重新可接受新指令
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+            
+            self.actionAble = true
+        })
     }
     
     //MARK: - 创建贝塞尔曲线返回路径Layer
@@ -148,7 +226,7 @@ class AvatarView: UIView {
 class AvatarBubble: UIView {
     
     fileprivate var label: UILabel
-    fileprivate let margin: CGFloat = 1
+    fileprivate let margin: CGFloat = 2
     fileprivate let text: String
     init(frame: CGRect, text: String) {
         

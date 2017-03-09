@@ -26,20 +26,7 @@ class AvatarAnimationController: BaseViewController {
         
         createAvatar()
         
-        let button = UIButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 60)
-        button.setCenterX(view.centerX())
-        button.setCenterY(view.centerY() + 100)
-        button.setTitle("dianwo", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), for: .normal)
-        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
-        view.addSubview(button)
-    }
-    
-    @objc fileprivate func buttonClick() {
-        
-        blurEffectView.isHidden = false
-        avatar.bubbleAction()
+        createSwipGuesture()
     }
     
     fileprivate func createImageView() {
@@ -56,17 +43,68 @@ class AvatarAnimationController: BaseViewController {
         
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
-        blurEffectView.alpha = 0.9
+        blurEffectView.alpha = 1
         blurEffectView.isHidden = true
         view.addSubview(blurEffectView)
     }
     
     fileprivate func createAvatar() {
         
-        avatar = AvatarView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), image: "avatar.jpg", bubbleArray: ["111","1881","331","221"])
+        avatar = AvatarView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), image: "avatar.jpg", bubbleArray: ["游戏","宅","漫画","电影","轻小说"])
         avatar.setCenterX(view.centerX())
         avatar.setCenterY(120)
         view.addSubview(avatar)
+        
+    }
+    
+    fileprivate func createSwipGuesture() {
+        
+        let gestureDown = UISwipeGestureRecognizer(target: self, action: #selector(avatarDown))
+        gestureDown.direction = .down
+        view.addGestureRecognizer(gestureDown)
+        
+        let gestureUp = UISwipeGestureRecognizer(target: self, action: #selector(avatarUp))
+        gestureUp.direction = .up
+        view.addGestureRecognizer(gestureUp)
+    }
+    
+    @objc fileprivate func avatarDown() {
+        
+        print("down")
+        
+        UIView.animate(withDuration: 1, animations: { [weak self] in
+            
+            self?.avatar.setCenterY((self?.view.centerY())!)
+            self?.blurEffectView.isHidden = false
+            
+            self?.view.isUserInteractionEnabled = false
+            }, completion: { isCompletion in
+                
+                self.avatar.isUnfold = true
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                    
+                    self.view.isUserInteractionEnabled = true
+                })
+        })
+        
+    }
+    
+    @objc fileprivate func avatarUp() {
+        
+        print("up")
+        
+        UIView.animate(withDuration: 1, animations: { [weak self] in
+            
+            self?.avatar.setCenterY(120)
+            self?.avatar.isUnfold = false
+            
+            self?.view.isUserInteractionEnabled = false
+            }, completion: { isCompletion in
+                
+                self.blurEffectView.isHidden = true
+                self.view.isUserInteractionEnabled = true
+        })
         
     }
     
