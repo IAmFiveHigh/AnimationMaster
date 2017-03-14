@@ -206,8 +206,24 @@ class AvatarView: UIView {
         let path = UIBezierPath()
         path.move(to: originPoint)
         
+        //计算出起点到目标点的向量
+        var v1 = Vector2(x: Double(destinationPoint.x - originPoint.x), y: Double(destinationPoint.y - originPoint.y))
         
-        path.addLine(to: destinationPoint)
+        //计算出逆时针90度后的向量
+        var v2 = v1.anticlockwise90Angle()
+        
+        v1 = v1 * 0.25
+        
+        v2 = v2 * (0.25 * sqrt(3))
+        
+        //获取控制点向量
+        let newV = v1 + v2
+        
+        //创建控制点坐标
+        let controlPoint = CGPoint(x: newV.x, y: newV.y)
+        
+        //绘制控制曲线
+        path.addQuadCurve(to: destinationPoint, controlPoint: controlPoint)
         
         let layer = CAShapeLayer()
         layer.path = path.cgPath
@@ -277,3 +293,36 @@ class AvatarBubble: UIView {
         addSubview(label)
     }
 }
+
+struct Vector2 : Equatable {
+    
+    var x: Double
+    var y: Double
+    
+    
+    /// 逆时针90度向量
+    ///
+    /// - Returns: 逆时针90度向量
+    func anticlockwise90Angle() -> Vector2 {
+        
+        let newX = -y
+        let newY = x
+        return Vector2(x: newX, y: newY)
+    }
+}
+
+func == (left: Vector2, right: Vector2) -> Bool {
+    
+    return left.x == right.x && left.y == right.y
+}
+
+func * (left: Vector2, right: Double) -> Vector2 {
+    
+    return Vector2(x: left.x * right, y: left.y * right)
+}
+
+func + (left: Vector2, right: Vector2) -> Vector2 {
+    
+    return Vector2(x: left.x + right.x, y: left.y + right.y)
+}
+
