@@ -209,7 +209,7 @@ class AvatarView: UIView {
         //计算出起点到目标点的向量
         var v1 = Vector2(x: Double(destinationPoint.x - originPoint.x), y: Double(destinationPoint.y - originPoint.y))
         
-        //计算出逆时针90度后的向量
+        //计算出顺时针90度后的向量
         var v2 = v1.anticlockwise90Angle()
         
         v1 = v1 * 0.25
@@ -217,7 +217,7 @@ class AvatarView: UIView {
         v2 = v2 * (0.25 * sqrt(3))
         
         //获取控制点向量
-        let newV = v1 + v2
+        let newV = v1 + v2 + Vector2(x: Double(originPoint.x), y: Double(originPoint.y))
         
         //创建控制点坐标
         let controlPoint = CGPoint(x: newV.x, y: newV.y)
@@ -300,13 +300,13 @@ struct Vector2 : Equatable {
     var y: Double
     
     
-    /// 逆时针90度向量
+    /// 顺时针90度向量
     ///
-    /// - Returns: 逆时针90度向量
+    /// - Returns: 顺时针90度向量
     func anticlockwise90Angle() -> Vector2 {
         
-        let newX = -y
-        let newY = x
+        let newX = y
+        let newY = -x
         return Vector2(x: newX, y: newY)
     }
 }
@@ -325,4 +325,10 @@ func + (left: Vector2, right: Vector2) -> Vector2 {
     
     return Vector2(x: left.x + right.x, y: left.y + right.y)
 }
+
+func - (left: Vector2, right: Vector2) -> Vector2 {
+    
+    return Vector2(x: left.x - right.x, y: left.y - right.y)
+}
+
 
