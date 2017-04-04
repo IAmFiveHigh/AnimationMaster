@@ -21,6 +21,8 @@
 		461C20B61E5EF49000BB6446 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C20B51E5EF49000BB6446 /* BaseViewController.swift */; };
 		461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C20BA1E5EFD1C00BB6446 /* CAKeyFrameController.swift */; };
 		462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B1FCB1E61D9A6004074CC /* KeyFrame.swift */; };
+		465E26F51E927CF300011521 /* CakeProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E26F41E927CF300011521 /* CakeProgressController.swift */; };
+		465E26F71E927D0A00011521 /* CakeProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E26F61E927D0A00011521 /* CakeProgressView.swift */; };
 		46600E021E66781B0059BB0E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E011E66781B0059BB0E /* SelectedButton.swift */; };
 		46600E041E66788C0059BB0E /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = 46600E031E66788C0059BB0E /* c.png */; };
 		46600E321E6692550059BB0E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46600E311E6692550059BB0E /* LoadingViewController.swift */; };
@@ -55,6 +57,8 @@
 		461C20B51E5EF49000BB6446 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		461C20BA1E5EFD1C00BB6446 /* CAKeyFrameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAKeyFrameController.swift; sourceTree = "<group>"; };
 		462B1FCB1E61D9A6004074CC /* KeyFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFrame.swift; sourceTree = "<group>"; };
+		465E26F41E927CF300011521 /* CakeProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeProgressController.swift; sourceTree = "<group>"; };
+		465E26F61E927D0A00011521 /* CakeProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeProgressView.swift; sourceTree = "<group>"; };
 		46600E011E66781B0059BB0E /* SelectedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
 		46600E031E66788C0059BB0E /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
 		46600E311E6692550059BB0E /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				465E26F31E927CB300011521 /* CakeProgressAnimation */,
 				461AE5531E6FE80A007E06F6 /* AvatarViewAnimation */,
 				46600E3C1E66C7E60059BB0E /* NumberAnimation */,
 				46600E301E6692330059BB0E /* LoadingViewAnimation */,
@@ -178,6 +183,15 @@
 				461C20BA1E5EFD1C00BB6446 /* CAKeyFrameController.swift */,
 			);
 			name = CAKeyFrameAnimation;
+			sourceTree = "<group>";
+		};
+		465E26F31E927CB300011521 /* CakeProgressAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				465E26F41E927CF300011521 /* CakeProgressController.swift */,
+				465E26F61E927D0A00011521 /* CakeProgressView.swift */,
+			);
+			name = CakeProgressAnimation;
 			sourceTree = "<group>";
 		};
 		46600E301E6692330059BB0E /* LoadingViewAnimation */ = {
@@ -332,10 +346,12 @@
 				46600E381E6692700059BB0E /* LoadingView.swift in Sources */,
 				46C421691E644A99005B8A01 /* ProgressView.swift in Sources */,
 				461C20BB1E5EFD1C00BB6446 /* CAKeyFrameController.swift in Sources */,
+				465E26F51E927CF300011521 /* CakeProgressController.swift in Sources */,
 				46600E601E66E4640059BB0E /* CountingLabel.swift in Sources */,
 				461C1F751E5D63D700BB6446 /* AppDelegate.swift in Sources */,
 				461AE5581E6FFD48007E06F6 /* AvatarView.swift in Sources */,
 				46600E321E6692550059BB0E /* LoadingViewController.swift in Sources */,
+				465E26F71E927D0A00011521 /* CakeProgressView.swift in Sources */,
 				461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */,
 				46600E021E66781B0059BB0E /* SelectedButton.swift in Sources */,
 				46EB697E1E6553130000A98B /* OpacityButton.swift in Sources */,
