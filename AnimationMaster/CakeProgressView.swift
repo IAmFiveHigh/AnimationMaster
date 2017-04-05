@@ -9,20 +9,43 @@
 import UIKit
 
 class CakeProgressView: UIView {
-
+    
+    fileprivate let interval: TimeInterval = 0.02
+    
     //冷却时间
     fileprivate let cd: Int
+    
+    //读秒
+    fileprivate var progress: Int = 0
     
     fileprivate lazy var label: UILabel = {
        
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 25)
         return label
     }()
     
-    fileprivate let timer = Timer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    fileprivate lazy var cakeProgress: CakeProgress = {
+        
+        let progress = CakeProgress(frame: self.bounds)
+        return progress
+    }()
     
+    //计时器
+    fileprivate var timer: Timer!
+    
+    //MARK: 设置是否显示倒计时数字
+    var hasIndexLabel: Bool = false {
+        didSet {
+            if hasIndexLabel {
+                label.isHidden = false
+            }else {
+                label.isHidden = true
+            }
+        }
+    }
     
     init(frame: CGRect, cd: Int) {
         
@@ -32,6 +55,7 @@ class CakeProgressView: UIView {
         
         setupUI()
         
+        createTimer()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,7 +64,7 @@ class CakeProgressView: UIView {
     
     fileprivate func setupUI() {
         
-        
+        addSubview(cakeProgress)
         
         label.frame = CGRect(x: 0, y: 0, width: width() / 3, height: width() / 3)
         label.center = center
@@ -48,7 +72,48 @@ class CakeProgressView: UIView {
         addSubview(label)
     }
     
+    fileprivate func createTimer() {
+        
+        timer = Timer(timeInterval: interval, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer.fireDate = Date.distantFuture
+
+        RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
+    }
+    
     @objc fileprivate func timerAction() {
+        
+        cakeProgress.progress += CGFloat(1 / (Double(cd) / interval)) * 2
+        
+        //1 秒表进度加等于常量时间间隔
+        progress += 2
+        
+        let tmp = progress / Int(1 / interval) //实际走了多少秒
+        let tmp2 = progress % Int(1 / interval) //当走够整数秒的时候
+        
+        if tmp == cd {
+            print("tmp = cd")
+            timer.fireDate = Date.distantFuture
+            isHidden = true
+        }
+        
+        if tmp2 == 0{
+            print("tmp2 == 0")
+            label.text = "\(cd - tmp)"
+        }
+        
+        print(progress)
+    }
+    
+    func colddown() {
+        
+        //重设label文字
+        isHidden = false
+        label.text = "\(cd)"
+        
+        progress = 0
+        cakeProgress.progress = 0
+        //开启计时器
+        timer.fireDate = Date.distantPast
         
         
     }
@@ -82,7 +147,8 @@ class CakeProgress: UIView {
     override func draw(_ rect: CGRect) {
         
         let ctx = UIGraphicsGetCurrentContext()
-        ctx?.setFillColor(UIColor.blue.cgColor)
+        ctx?.setFillColor(UIColor.black.cgColor)
+        ctx?.setAlpha(0.5)
         ctx?.setLineWidth(1)
         ctx?.move(to: CGPoint(x: width() / 2, y: height() / 2))
         ctx?.addLine(to: CGPoint(x: middleWidth(), y: 0))

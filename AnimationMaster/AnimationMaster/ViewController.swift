@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         add(LoadingViewController(), name: "加载等待动画")
         add(NumberAnimationController(), name: "变化数值动画")
         add(AvatarAnimationController(), name: "头像下拉动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(CakeProgressController(), name: "饼状冷却进度动画")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
