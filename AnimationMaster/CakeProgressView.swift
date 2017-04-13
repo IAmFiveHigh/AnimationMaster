@@ -82,10 +82,10 @@ class CakeProgressView: UIView {
     
     @objc fileprivate func timerAction() {
         
-        cakeProgress.progress += CGFloat(1 / (Double(cd) / interval)) * 2
+        cakeProgress.progress += CGFloat(1 / (Double(cd) / interval))
         
         //1 秒表进度加等于常量时间间隔
-        progress += 2
+        progress += 1
         
         let tmp = progress / Int(1 / interval) //实际走了多少秒
         let tmp2 = progress % Int(1 / interval) //当走够整数秒的时候
