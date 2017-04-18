@@ -10,10 +10,6 @@ import UIKit
 
 class NumberAnimationController: BaseViewController {
 
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
