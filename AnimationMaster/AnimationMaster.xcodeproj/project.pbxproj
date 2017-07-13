@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3564146E1F175BC70081C086 /* BounceJellyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564146D1F175BC70081C086 /* BounceJellyAnimation.swift */; };
 		460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C8D271E6E9252007BB2E7 /* HighlightButton.swift */; };
 		461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */; };
 		461AE5581E6FFD48007E06F6 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5571E6FFD48007E06F6 /* AvatarView.swift */; };
@@ -217,6 +218,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3564146D1F175BC70081C086 /* BounceJellyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceJellyAnimation.swift; sourceTree = "<group>"; };
 		460C8D271E6E9252007BB2E7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarAnimationController.swift; sourceTree = "<group>"; };
 		461AE5571E6FFD48007E06F6 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -439,6 +441,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3564146C1F175B830081C086 /* 弹簧粘性动画 */ = {
+			isa = PBXGroup;
+			children = (
+				3564146D1F175BC70081C086 /* BounceJellyAnimation.swift */,
+			);
+			path = "弹簧粘性动画";
+			sourceTree = "<group>";
+		};
 		461AE5531E6FE80A007E06F6 /* AvatarViewAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +471,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				3564146C1F175B830081C086 /* 弹簧粘性动画 */,
 				46C3A4891EA632C700B71E5A /* LoadingImageController */,
 				465E26F31E927CB300011521 /* CakeProgressAnimation */,
 				461AE5531E6FE80A007E06F6 /* AvatarViewAnimation */,
@@ -830,7 +841,7 @@
 				TargetAttributes = {
 					461C1F701E5D63D700BB6446 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = K8B9VX64QJ;
+						DevelopmentTeam = VP672269SN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1062,6 +1073,7 @@
 				46600E3E1E66C8030059BB0E /* NumberAnimationController.swift in Sources */,
 				46600E391E6692700059BB0E /* WaveView.swift in Sources */,
 				462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */,
+				3564146E1F175BC70081C086 /* BounceJellyAnimation.swift in Sources */,
 				460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */,
 				46600E381E6692700059BB0E /* LoadingView.swift in Sources */,
 				46C421691E644A99005B8A01 /* ProgressView.swift in Sources */,
@@ -1195,7 +1207,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K8B9VX64QJ;
+				DEVELOPMENT_TEAM = VP672269SN;
 				INFOPLIST_FILE = AnimationMaster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LHC.AnimationMaster;
@@ -1208,7 +1220,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K8B9VX64QJ;
+				DEVELOPMENT_TEAM = VP672269SN;
 				INFOPLIST_FILE = AnimationMaster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LHC.AnimationMaster;
