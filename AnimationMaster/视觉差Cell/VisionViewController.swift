@@ -38,11 +38,11 @@ class VisionViewController: BaseViewController {
         tableView.register(VisionCell.self, forCellReuseIdentifier: visionCellID)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        scrollViewDidScroll(UIScrollView())
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        scrollViewDidScroll(UIScrollView())
+//    }
     
 }
 

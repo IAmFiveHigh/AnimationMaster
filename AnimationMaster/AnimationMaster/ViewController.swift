@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         add(LoadingImageController(), name: "图片加载动画")
         add(BounceJellyAnimation(), name: "弹簧果冻动画")
         add(VisionViewController(), name: "视觉差动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(CollectionVisionController(), name: "横向视觉差动画")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
@@ -127,25 +127,25 @@ class listCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         
-        super.setHighlighted(highlighted, animated: animated)
-        
-        if isHighlighted {
-            
-            let basicAnimation = CABasicAnimation(keyPath: "transform.scale")
-            basicAnimation.toValue = CGSize(width: 0.95, height: 0.95)
-            basicAnimation.duration = 0.1
-            basicAnimation.isRemovedOnCompletion = false
-            basicAnimation.fillMode = kCAFillModeForwards
-            textLabel?.layer.add(basicAnimation, forKey: nil)
-        }else {
-            
-            let spring = CABasicAnimation(keyPath: "transform.scale")
-            spring.toValue = CGSize(width: 1, height: 1)
-            spring.duration = 0.1
-            spring.isRemovedOnCompletion = false
-            spring.fillMode = kCAFillModeForwards
-            textLabel?.layer.add(spring, forKey: nil)
-        }
+//        super.setHighlighted(highlighted, animated: animated)
+//        
+//        if isHighlighted {
+//            
+//            let basicAnimation = CABasicAnimation(keyPath: "transform.scale")
+//            basicAnimation.toValue = CGSize(width: 0.95, height: 0.95)
+//            basicAnimation.duration = 0.1
+//            basicAnimation.isRemovedOnCompletion = false
+//            basicAnimation.fillMode = kCAFillModeForwards
+//            textLabel?.layer.add(basicAnimation, forKey: nil)
+//        }else {
+//            
+//            let spring = CABasicAnimation(keyPath: "transform.scale")
+//            spring.toValue = CGSize(width: 1, height: 1)
+//            spring.duration = 0.1
+//            spring.isRemovedOnCompletion = false
+//            spring.fillMode = kCAFillModeForwards
+//            textLabel?.layer.add(spring, forKey: nil)
+//        }
     }
 }
 
