@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         add(VisionViewController(), name: "视觉差动画")
         add(CollectionVisionController(), name: "横向视觉差动画")
         add(GradientLayerAnimaController(), name: "渐变Mask动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(GradientLabelAnimaController(), name: "渐变Label动画")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
