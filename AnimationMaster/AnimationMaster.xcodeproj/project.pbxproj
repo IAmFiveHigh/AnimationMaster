@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3564146E1F175BC70081C086 /* BounceJellyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564146D1F175BC70081C086 /* BounceJellyAnimation.swift */; };
+		3576AEE11F21997C00E11395 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AEE01F21997C00E11395 /* VisionViewController.swift */; };
+		3576AEE31F219A2300E11395 /* VisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AEE21F219A2300E11395 /* VisionCell.swift */; };
+		3576AEE71F21A4BF00E11395 /* 图层-5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3576AEE41F21A4BF00E11395 /* 图层-5.jpg */; };
+		3576AEE81F21A4BF00E11395 /* 图层-6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3576AEE51F21A4BF00E11395 /* 图层-6.jpg */; };
+		3576AEE91F21A4BF00E11395 /* 图层-7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3576AEE61F21A4BF00E11395 /* 图层-7.jpg */; };
 		460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C8D271E6E9252007BB2E7 /* HighlightButton.swift */; };
 		461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */; };
 		461AE5581E6FFD48007E06F6 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5571E6FFD48007E06F6 /* AvatarView.swift */; };
@@ -219,6 +224,11 @@
 
 /* Begin PBXFileReference section */
 		3564146D1F175BC70081C086 /* BounceJellyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceJellyAnimation.swift; sourceTree = "<group>"; };
+		3576AEE01F21997C00E11395 /* VisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
+		3576AEE21F219A2300E11395 /* VisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionCell.swift; sourceTree = "<group>"; };
+		3576AEE41F21A4BF00E11395 /* 图层-5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "图层-5.jpg"; sourceTree = "<group>"; };
+		3576AEE51F21A4BF00E11395 /* 图层-6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "图层-6.jpg"; sourceTree = "<group>"; };
+		3576AEE61F21A4BF00E11395 /* 图层-7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "图层-7.jpg"; sourceTree = "<group>"; };
 		460C8D271E6E9252007BB2E7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarAnimationController.swift; sourceTree = "<group>"; };
 		461AE5571E6FFD48007E06F6 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -449,6 +459,18 @@
 			path = "弹簧粘性动画";
 			sourceTree = "<group>";
 		};
+		3576AEDF1F21994A00E11395 /* 视觉差Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3576AEE41F21A4BF00E11395 /* 图层-5.jpg */,
+				3576AEE51F21A4BF00E11395 /* 图层-6.jpg */,
+				3576AEE61F21A4BF00E11395 /* 图层-7.jpg */,
+				3576AEE01F21997C00E11395 /* VisionViewController.swift */,
+				3576AEE21F219A2300E11395 /* VisionCell.swift */,
+			);
+			path = "视觉差Cell";
+			sourceTree = "<group>";
+		};
 		461AE5531E6FE80A007E06F6 /* AvatarViewAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +493,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				3576AEDF1F21994A00E11395 /* 视觉差Cell */,
 				3564146C1F175B830081C086 /* 弹簧粘性动画 */,
 				46C3A4891EA632C700B71E5A /* LoadingImageController */,
 				465E26F31E927CB300011521 /* CakeProgressAnimation */,
@@ -900,6 +923,7 @@
 				46C3A5461EA632C800B71E5A /* loading4_00012.png in Resources */,
 				46C3A5AE1EA632C800B71E5A /* loading4_00116.png in Resources */,
 				46C3A5B51EA632C800B71E5A /* loading4_00123.png in Resources */,
+				3576AEE91F21A4BF00E11395 /* 图层-7.jpg in Resources */,
 				46C3A55A1EA632C800B71E5A /* loading4_00032.png in Resources */,
 				46C3A5AB1EA632C800B71E5A /* loading4_00113.png in Resources */,
 				46C3A5DA1EA632C800B71E5A /* loading4_00160.png in Resources */,
@@ -910,6 +934,7 @@
 				46C3A5DF1EA632C800B71E5A /* loading4_00165.png in Resources */,
 				46C3A5701EA632C800B71E5A /* loading4_00054.png in Resources */,
 				46C3A5CB1EA632C800B71E5A /* loading4_00145.png in Resources */,
+				3576AEE81F21A4BF00E11395 /* 图层-6.jpg in Resources */,
 				46C3A5551EA632C800B71E5A /* loading4_00027.png in Resources */,
 				46C3A5871EA632C800B71E5A /* loading4_00077.png in Resources */,
 				46C3A57F1EA632C800B71E5A /* loading4_00069.png in Resources */,
@@ -966,6 +991,7 @@
 				46C3A5921EA632C800B71E5A /* loading4_00088.png in Resources */,
 				46600E371E6692700059BB0E /* 120x120-1.png in Resources */,
 				46C3A5B01EA632C800B71E5A /* loading4_00118.png in Resources */,
+				3576AEE71F21A4BF00E11395 /* 图层-5.jpg in Resources */,
 				461AE57A1E700185007E06F6 /* background.jpg in Resources */,
 				46C3A5CE1EA632C800B71E5A /* loading4_00148.png in Resources */,
 				46C3A57D1EA632C800B71E5A /* loading4_00067.png in Resources */,
@@ -1062,10 +1088,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3576AEE31F219A2300E11395 /* VisionCell.swift in Sources */,
 				468EF85B1E604FFC009DBB2A /* CircleView.swift in Sources */,
 				461C20B61E5EF49000BB6446 /* BaseViewController.swift in Sources */,
 				46EB697C1E654F3F0000A98B /* SelectButtonController.swift in Sources */,
 				461C20AE1E5ECC1E00BB6446 /* CABaseController.swift in Sources */,
+				3576AEE11F21997C00E11395 /* VisionViewController.swift in Sources */,
 				46C3A5EA1EA632E600B71E5A /* LoadingImageController.swift in Sources */,
 				461C1F771E5D63D700BB6446 /* ViewController.swift in Sources */,
 				468EF85A1E604FFC009DBB2A /* AnimatCircleController.swift in Sources */,

@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         add(CakeProgressController(), name: "饼状冷却进度动画")
         add(LoadingImageController(), name: "图片加载动画")
         add(BounceJellyAnimation(), name: "弹簧果冻动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(VisionViewController(), name: "视觉差动画")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
