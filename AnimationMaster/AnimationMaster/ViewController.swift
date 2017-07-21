@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         add(BounceJellyAnimation(), name: "弹簧果冻动画")
         add(VisionViewController(), name: "视觉差动画")
         add(CollectionVisionController(), name: "横向视觉差动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(GradientLayerAnimaController(), name: "渐变Mask动画")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")

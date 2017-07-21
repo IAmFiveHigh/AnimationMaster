@@ -20,6 +20,7 @@
 		3576AEF61F21E02C00E11395 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3576AEF11F21E02C00E11395 /* 5.jpg */; };
 		3576AEF71F21E02C00E11395 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3576AEF21F21E02C00E11395 /* 1.jpg */; };
 		3576AEF81F21E02C00E11395 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3576AEF31F21E02C00E11395 /* 2.jpg */; };
+		3576AEFB1F21E58300E11395 /* GradientLayerAnimaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AEFA1F21E58300E11395 /* GradientLayerAnimaController.swift */; };
 		460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C8D271E6E9252007BB2E7 /* HighlightButton.swift */; };
 		461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */; };
 		461AE5581E6FFD48007E06F6 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5571E6FFD48007E06F6 /* AvatarView.swift */; };
@@ -243,6 +244,7 @@
 		3576AEF11F21E02C00E11395 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		3576AEF21F21E02C00E11395 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		3576AEF31F21E02C00E11395 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		3576AEFA1F21E58300E11395 /* GradientLayerAnimaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayerAnimaController.swift; sourceTree = "<group>"; };
 		460C8D271E6E9252007BB2E7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarAnimationController.swift; sourceTree = "<group>"; };
 		461AE5571E6FFD48007E06F6 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -499,6 +501,14 @@
 			path = "横向视觉差动画";
 			sourceTree = "<group>";
 		};
+		3576AEF91F21E55D00E11395 /* GradientLayeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				3576AEFA1F21E58300E11395 /* GradientLayerAnimaController.swift */,
+			);
+			name = GradientLayeAnimation;
+			sourceTree = "<group>";
+		};
 		461AE5531E6FE80A007E06F6 /* AvatarViewAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +531,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				3576AEF91F21E55D00E11395 /* GradientLayeAnimation */,
 				3576AEEA1F21AD2F00E11395 /* 横向视觉差动画 */,
 				3576AEDF1F21994A00E11395 /* 视觉差Cell */,
 				3564146C1F175B830081C086 /* 弹簧粘性动画 */,
@@ -1150,6 +1161,7 @@
 				465E26F71E927D0A00011521 /* CakeProgressView.swift in Sources */,
 				461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */,
 				46600E021E66781B0059BB0E /* SelectedButton.swift in Sources */,
+				3576AEFB1F21E58300E11395 /* GradientLayerAnimaController.swift in Sources */,
 				46EB697E1E6553130000A98B /* OpacityButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
