@@ -331,4 +331,9 @@ func - (left: Vector2, right: Vector2) -> Vector2 {
     return Vector2(x: left.x - right.x, y: left.y - right.y)
 }
 
+enum RotationDirection {
+    case 顺时针
+    case 逆时针
+}
+
 

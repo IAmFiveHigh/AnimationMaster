@@ -9,8 +9,6 @@
 import UIKit
 
 class GradientLabelAnimaController: BaseViewController {
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
