@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         add(GradientLayerAnimaController(), name: "渐变Mask动画")
         add(GradientLabelAnimaController(), name: "渐变Label动画")
         add(WaterDropGatherAnimController(), name: "水滴汇聚动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(ScreenFoldAnimationController(), name: "百叶窗特效动画")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")

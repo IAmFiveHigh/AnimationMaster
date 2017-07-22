@@ -23,6 +23,7 @@
 		3576AEFB1F21E58300E11395 /* GradientLayerAnimaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AEFA1F21E58300E11395 /* GradientLayerAnimaController.swift */; };
 		3576AEFE1F21FA3000E11395 /* GradientLabelAnimaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AEFD1F21FA3000E11395 /* GradientLabelAnimaController.swift */; };
 		3576AF011F220A8900E11395 /* WaterDropGatherAnimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AF001F220A8900E11395 /* WaterDropGatherAnimController.swift */; };
+		358573C31F2339BF008F640E /* ScreenFoldAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358573C21F2339BF008F640E /* ScreenFoldAnimationController.swift */; };
 		460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C8D271E6E9252007BB2E7 /* HighlightButton.swift */; };
 		461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */; };
 		461AE5581E6FFD48007E06F6 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5571E6FFD48007E06F6 /* AvatarView.swift */; };
@@ -249,6 +250,7 @@
 		3576AEFA1F21E58300E11395 /* GradientLayerAnimaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayerAnimaController.swift; sourceTree = "<group>"; };
 		3576AEFD1F21FA3000E11395 /* GradientLabelAnimaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLabelAnimaController.swift; sourceTree = "<group>"; };
 		3576AF001F220A8900E11395 /* WaterDropGatherAnimController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterDropGatherAnimController.swift; sourceTree = "<group>"; };
+		358573C21F2339BF008F640E /* ScreenFoldAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFoldAnimationController.swift; sourceTree = "<group>"; };
 		460C8D271E6E9252007BB2E7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarAnimationController.swift; sourceTree = "<group>"; };
 		461AE5571E6FFD48007E06F6 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -529,6 +531,14 @@
 			name = WaterDropGatherAnimation;
 			sourceTree = "<group>";
 		};
+		358573C11F233995008F640E /* ScreenFoldAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				358573C21F2339BF008F640E /* ScreenFoldAnimationController.swift */,
+			);
+			name = ScreenFoldAnimation;
+			sourceTree = "<group>";
+		};
 		461AE5531E6FE80A007E06F6 /* AvatarViewAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +561,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				358573C11F233995008F640E /* ScreenFoldAnimation */,
 				3576AEFF1F220A5400E11395 /* WaterDropGatherAnimation */,
 				3576AEFC1F21FA0600E11395 /* GradientLayerLabelAnimation */,
 				3576AEF91F21E55D00E11395 /* GradientLayeAnimation */,
@@ -1187,6 +1198,7 @@
 				46600E021E66781B0059BB0E /* SelectedButton.swift in Sources */,
 				3576AEFB1F21E58300E11395 /* GradientLayerAnimaController.swift in Sources */,
 				46EB697E1E6553130000A98B /* OpacityButton.swift in Sources */,
+				358573C31F2339BF008F640E /* ScreenFoldAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,6 +41,5 @@ class GradientLabelAnimaController: BaseViewController {
         label.layer.mask = gradientLayer
     }
 
-   
 
 }

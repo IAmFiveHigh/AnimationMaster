@@ -28,7 +28,6 @@ class WaterDropGatherAnimController: BaseViewController {
     
     fileprivate var timer: Timer!
     
-    fileprivate var index: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +74,7 @@ class WaterDropGatherAnimController: BaseViewController {
         
         littleWaterDropArrays.append(littleWaterDrop)
         
-        //index 自加一
-        index += 1
+        
     }
     
     fileprivate func createPathByPoint(_ point: CGPoint, v: Vector2) -> CAShapeLayer {
@@ -128,6 +126,19 @@ class WaterDropGatherAnimController: BaseViewController {
     @objc fileprivate func action() {
         
         createArcWaterDrop()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        timer.fireDate = Date.distantFuture
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if let timer = timer {
+            timer.fireDate = Date.distantPast
+        }
+        
     }
 }
 
