@@ -210,7 +210,7 @@ class AvatarView: UIView {
         var v1 = Vector2(x: Double(destinationPoint.x - originPoint.x), y: Double(destinationPoint.y - originPoint.y))
         
         //计算出顺时针90度后的向量
-        var v2 = v1.anticlockwise90Angle()
+        var v2 = v1.transfrom90Angle(rotationDirect: .顺时针)
         
         v1 = v1 * 0.25
         
@@ -300,16 +300,23 @@ struct Vector2 : Equatable {
     var y: Double
     
     
-    /// 顺时针90度向量
-    ///
-    /// - Returns: 顺时针90度向量
-    func anticlockwise90Angle() -> Vector2 {
+    // 逆时针或者顺时针反转向量
+    func transfrom90Angle( rotationDirect: RotationDirection) -> Vector2 {
         
-        let newX = y
-        let newY = -x
-        return Vector2(x: newX, y: newY)
+        switch rotationDirect {
+        case .逆时针:
+            
+            let newX = -y
+            let newY = x
+            return Vector2(x: newX, y: newY)
+        case .顺时针:
+            let newX = y
+            let newY = -x
+            return Vector2(x: newX, y: newY)
+        }
     }
 }
+    
 
 func == (left: Vector2, right: Vector2) -> Bool {
     
