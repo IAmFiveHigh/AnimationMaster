@@ -16,17 +16,27 @@ class WaterDropGatherAnimController: BaseViewController {
     // 背景圆弧的半径
     fileprivate let arcRadius: CGFloat = 80
     
-    
+    fileprivate var centerV: Vector2!
     
     fileprivate var littleWaterDropArrays = [WaterDrop]()
     
-    fileprivate var bigWaterDrop: WaterDrop!
+    fileprivate lazy var bigWaterDrop: WaterDrop = {
+       
+        let wd = WaterDrop(radius: 0, center: CGPoint(x: screenWidth / 2, y: screenHeight / 2))
+        return wd
+    }()
     
     fileprivate var timer: Timer!
+    
+    fileprivate var index: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        centerV = Vector2(x: Double(view.center.x), y: Double(view.center.y))
+        
+        view.addSubview(bigWaterDrop)
+        
         createBG()
         
         createTimer()
@@ -48,9 +58,9 @@ class WaterDropGatherAnimController: BaseViewController {
         let tmpAngle = arc4random_uniform(360)
 //        let a = CGFloat(tmpAngle) / 180.0
         let v = Vector2(x: startRadius * cos(Double(tmpAngle)), y: startRadius * sin(Double(tmpAngle)))
-        let p = v + Vector2(x: Double(view.centerX()), y: Double(view.centerY()))
+        let p = v + centerV
         
-        let littleWaterDrop = WaterDrop(radius: 20, center: CGPoint(x: p.x, y: p.y))
+        let littleWaterDrop = WaterDrop(radius: 10, center: CGPoint(x: p.x, y: p.y))
         view.addSubview(littleWaterDrop)
         
         let layer = createPathByPoint(CGPoint(x: p.x, y: p.y), v: v)
@@ -60,7 +70,13 @@ class WaterDropGatherAnimController: BaseViewController {
         animation.path = layer.path
         animation.isRemovedOnCompletion = false
         animation.fillMode = kCAFillModeForwards
-        littleWaterDrop.layer.add(animation, forKey: "littleWaterMove")
+        animation.delegate = self
+        littleWaterDrop.layer.add(animation, forKey: "littleWaterMove\(index)")
+        
+        littleWaterDropArrays.append(littleWaterDrop)
+        
+        //index 自加一
+        index += 1
     }
     
     fileprivate func createPathByPoint(_ point: CGPoint, v: Vector2) -> CAShapeLayer {
@@ -68,7 +84,20 @@ class WaterDropGatherAnimController: BaseViewController {
         let bezierPath = UIBezierPath()
         
         bezierPath.move(to: point)
-        bezierPath.addLine(to: view.center)
+        
+        //随机获得方向
+        let arc90Angle: RotationDirection = arc4random() % 2 == 0 ? .顺时针 : .逆时针
+        
+        //获取中间点向量
+        let newMidV = Vector2(x: v.x / 2, y: v.y / 2)
+        
+        //根据方向偏转向量
+        let newV = newMidV.transfrom90Angle(rotationDirect: arc90Angle)
+        
+        //控制点向量
+        let controV = newMidV + newV + centerV
+        
+        bezierPath.addQuadCurve(to: view.center, controlPoint: CGPoint(x: controV.x, y: controV.y))
         
         let shapelayer = CAShapeLayer()
         shapelayer.path = bezierPath.cgPath
@@ -76,9 +105,22 @@ class WaterDropGatherAnimController: BaseViewController {
         return shapelayer
     }
     
+    fileprivate func centerWaterDropAction() {
+        
+        if bigWaterDrop.radius == 0 {
+            
+            bigWaterDrop.radius += 10
+        }else {
+            
+            bigWaterDrop.radius += 3
+        }
+        
+        
+    }
+    
     fileprivate func createTimer() {
         
-        timer = Timer(timeInterval: 0.8, target: self, selector: #selector(action), userInfo: nil, repeats: true)
+        timer = Timer(timeInterval: 1, target: self, selector: #selector(action), userInfo: nil, repeats: true)
         timer.fireDate = Date.distantPast
         RunLoop.main.add(timer, forMode: .defaultRunLoopMode)
     }
@@ -89,19 +131,45 @@ class WaterDropGatherAnimController: BaseViewController {
     }
 }
 
+extension WaterDropGatherAnimController: CAAnimationDelegate {
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+        //
+        littleWaterDropArrays.removeFirst().removeFromSuperview()
+        centerWaterDropAction()
+    }
+}
+
 class WaterDrop: UIView {
+    
+    var radius: CGFloat {
+        didSet {
+            let tmp = center
+            UIView.animate(withDuration: 0.15) {
+                self.setWidth(self.radius * 2)
+                self.setHeight(self.radius * 2)
+                self.center = tmp
+                self.layer.cornerRadius = self.radius
+            }
+            
+        }
+    }
     
     convenience init(radius: CGFloat, center: CGPoint) {
         
-        self.init(frame: CGRect(x: center.x, y: center.y, width: radius, height: radius))
+        self.init(frame: CGRect(x: center.x, y: center.y, width: radius * 2, height: radius * 2))
     }
     
     override init(frame: CGRect) {
+        
+        self.radius = frame.width / 2
+        
         super.init(frame: frame)
         
         backgroundColor = UIColor(hexColor: "32B4FF")
         
-        layer.cornerRadius = frame.width / 2
+        layer.cornerRadius = self.radius
         layer.masksToBounds = true
     }
     
