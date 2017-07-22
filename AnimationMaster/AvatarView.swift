@@ -123,7 +123,7 @@ class AvatarView: UIView {
         thirdFloor.isHidden = false
         
         //根据bubble数量获取分得的单位角度大小
-        let unite = CGFloat(M_PI * 2 / Double(bubbleViewArray.count))
+        let unite = CGFloat(Double.pi * 2 / Double(bubbleViewArray.count))
         
         //设置bubble抛出距离
         let length = width()

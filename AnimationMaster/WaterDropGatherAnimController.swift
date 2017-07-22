@@ -10,18 +10,42 @@ import UIKit
 
 class WaterDropGatherAnimController: BaseViewController {
 
+    fileprivate var littleWaterDropArrays = [WaterDrop]()
+    
+    fileprivate var bigWaterDrop: WaterDrop!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        createBG()
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    fileprivate func createBG() {
+        
+        let path = UIBezierPath(arcCenter: view.center, radius: 80, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+        let shaperLayer = CAShapeLayer()
+        shaperLayer.path = path.cgPath
+        shaperLayer.strokeColor = UIColor(hexColor: "32B4FF").cgColor
+        shaperLayer.fillColor = UIColor.clear.cgColor
+        shaperLayer.lineWidth = 5
+        view.layer.addSublayer(shaperLayer)
+    }
+
+}
+
+class WaterDrop: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        backgroundColor = UIColor(hexColor: "32B4FF")
+        
+        layer.masksToBounds = true
     }
     
-
-    
-
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

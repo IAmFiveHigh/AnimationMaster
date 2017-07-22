@@ -49,8 +49,8 @@ extension CircleView {
     ///   - endAngle: 结束角度
     func set(starAngle: CGFloat, endAngle: CGFloat, animation: Bool) {
         
-        let sAngle = starAngle / 180 * CGFloat(M_PI) - CGFloat(M_PI_2)
-        let eAngle = endAngle / 180 * CGFloat(M_PI) - CGFloat(M_PI_2)
+        let sAngle = starAngle / 180 * .pi - .pi / 2
+        let eAngle = endAngle / 180 * .pi - .pi / 2
         
         makeEffective(starAngle: sAngle, endAngle: eAngle, animation: animation)
     }

@@ -152,9 +152,9 @@ class CakeProgress: UIView {
         ctx?.setLineWidth(1)
         ctx?.move(to: CGPoint(x: width() / 2, y: height() / 2))
         ctx?.addLine(to: CGPoint(x: middleWidth(), y: 0))
-        let endAngle = CGFloat(M_PI) * 2 * progress - CGFloat(M_PI) / 2
+        let endAngle = CGFloat.pi * 2 * progress - CGFloat.pi / 2
         
-        ctx?.addArc(center: CGPoint(x: width() / 2, y: height() / 2), radius: width() / 2, startAngle: -CGFloat(M_PI) / 2, endAngle: endAngle, clockwise: true)
+        ctx?.addArc(center: CGPoint(x: width() / 2, y: height() / 2), radius: width() / 2, startAngle: -CGFloat.pi / 2, endAngle: endAngle, clockwise: true)
         ctx?.fillPath()
         
     }
