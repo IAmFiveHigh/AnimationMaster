@@ -36,8 +36,8 @@ class ScreenFoldAnimationController: BaseViewController {
             
             //CGImageRef img = UIGetScreenImage();
             let rect = CGRect(x: 0, y: 64, width: screenWidth, height: screenHeight - 64)
-            
-            UIGraphicsBeginImageContext(UIScreen.main.bounds.size)
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: screenWidth, height: screenHeight), false, 1)
+//            UIGraphicsBeginImageContext(UIScreen.main.bounds.size)
             self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
             let img = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
