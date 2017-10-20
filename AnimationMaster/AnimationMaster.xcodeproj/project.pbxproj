@@ -23,6 +23,9 @@
 		3576AEFB1F21E58300E11395 /* GradientLayerAnimaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AEFA1F21E58300E11395 /* GradientLayerAnimaController.swift */; };
 		3576AEFE1F21FA3000E11395 /* GradientLabelAnimaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AEFD1F21FA3000E11395 /* GradientLabelAnimaController.swift */; };
 		3576AF011F220A8900E11395 /* WaterDropGatherAnimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576AF001F220A8900E11395 /* WaterDropGatherAnimController.swift */; };
+		3583CB181F9A173800215E3A /* FireEmitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3583CB171F9A173800215E3A /* FireEmitterViewController.swift */; };
+		3583CB1B1F9A177800215E3A /* DazRing.png in Resources */ = {isa = PBXBuildFile; fileRef = 3583CB191F9A177800215E3A /* DazRing.png */; };
+		3583CB1C1F9A177800215E3A /* DazStarOutline.png in Resources */ = {isa = PBXBuildFile; fileRef = 3583CB1A1F9A177800215E3A /* DazStarOutline.png */; };
 		358573C31F2339BF008F640E /* ScreenFoldAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358573C21F2339BF008F640E /* ScreenFoldAnimationController.swift */; };
 		460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C8D271E6E9252007BB2E7 /* HighlightButton.swift */; };
 		461AE5551E6FE844007E06F6 /* AvatarAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */; };
@@ -250,6 +253,9 @@
 		3576AEFA1F21E58300E11395 /* GradientLayerAnimaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayerAnimaController.swift; sourceTree = "<group>"; };
 		3576AEFD1F21FA3000E11395 /* GradientLabelAnimaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLabelAnimaController.swift; sourceTree = "<group>"; };
 		3576AF001F220A8900E11395 /* WaterDropGatherAnimController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterDropGatherAnimController.swift; sourceTree = "<group>"; };
+		3583CB171F9A173800215E3A /* FireEmitterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireEmitterViewController.swift; sourceTree = "<group>"; };
+		3583CB191F9A177800215E3A /* DazRing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazRing.png; sourceTree = "<group>"; };
+		3583CB1A1F9A177800215E3A /* DazStarOutline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazStarOutline.png; sourceTree = "<group>"; };
 		358573C21F2339BF008F640E /* ScreenFoldAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFoldAnimationController.swift; sourceTree = "<group>"; };
 		460C8D271E6E9252007BB2E7 /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		461AE5541E6FE844007E06F6 /* AvatarAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarAnimationController.swift; sourceTree = "<group>"; };
@@ -531,6 +537,16 @@
 			name = WaterDropGatherAnimation;
 			sourceTree = "<group>";
 		};
+		3583CB161F9A170900215E3A /* 烟花 */ = {
+			isa = PBXGroup;
+			children = (
+				3583CB191F9A177800215E3A /* DazRing.png */,
+				3583CB1A1F9A177800215E3A /* DazStarOutline.png */,
+				3583CB171F9A173800215E3A /* FireEmitterViewController.swift */,
+			);
+			name = "烟花";
+			sourceTree = "<group>";
+		};
 		358573C11F233995008F640E /* ScreenFoldAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +577,7 @@
 		461C1F681E5D63D700BB6446 = {
 			isa = PBXGroup;
 			children = (
+				3583CB161F9A170900215E3A /* 烟花 */,
 				358573C11F233995008F640E /* ScreenFoldAnimation */,
 				3576AEFF1F220A5400E11395 /* WaterDropGatherAnimation */,
 				3576AEFC1F21FA0600E11395 /* GradientLayerLabelAnimation */,
@@ -1025,6 +1042,7 @@
 				3576AEF51F21E02C00E11395 /* 4.jpg in Resources */,
 				46C3A5511EA632C800B71E5A /* loading4_00023.png in Resources */,
 				46C3A5451EA632C800B71E5A /* loading4_00011.png in Resources */,
+				3583CB1C1F9A177800215E3A /* DazStarOutline.png in Resources */,
 				46C3A5881EA632C800B71E5A /* loading4_00078.png in Resources */,
 				46C3A53B1EA632C800B71E5A /* loading4_00001.png in Resources */,
 				46C3A53E1EA632C800B71E5A /* loading4_00004.png in Resources */,
@@ -1138,6 +1156,7 @@
 				46C3A54C1EA632C800B71E5A /* loading4_00018.png in Resources */,
 				46C3A5841EA632C800B71E5A /* loading4_00074.png in Resources */,
 				46C3A54A1EA632C800B71E5A /* loading4_00016.png in Resources */,
+				3583CB1B1F9A177800215E3A /* DazRing.png in Resources */,
 				46C3A5E51EA632C800B71E5A /* loading4_00171.png in Resources */,
 				46C3A5AF1EA632C800B71E5A /* loading4_00117.png in Resources */,
 				46C3A5941EA632C800B71E5A /* loading4_00090.png in Resources */,
@@ -1183,6 +1202,7 @@
 				462B1FCC1E61D9A6004074CC /* KeyFrame.swift in Sources */,
 				3564146E1F175BC70081C086 /* BounceJellyAnimation.swift in Sources */,
 				3576AEFE1F21FA3000E11395 /* GradientLabelAnimaController.swift in Sources */,
+				3583CB181F9A173800215E3A /* FireEmitterViewController.swift in Sources */,
 				460C8D281E6E9252007BB2E7 /* HighlightButton.swift in Sources */,
 				46600E381E6692700059BB0E /* LoadingView.swift in Sources */,
 				3576AEEE1F21B10A00E11395 /* CollectionVisionCell.swift in Sources */,

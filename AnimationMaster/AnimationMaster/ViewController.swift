@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         add(GradientLabelAnimaController(), name: "渐变Label动画")
         add(WaterDropGatherAnimController(), name: "水滴汇聚动画")
         add(ScreenFoldAnimationController(), name: "百叶窗特效动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(FireEmitterViewController(), name: "烟花粒子特效")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
         add(BaseViewController(), name: "暂时占位Cell")
