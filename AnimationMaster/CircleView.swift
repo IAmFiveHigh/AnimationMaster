@@ -77,6 +77,8 @@ extension CircleView {
             shapeLayer.add(anima, forKey: "strokeEnd")
         }
     }
+    
+    
 }
 
 //MARK: - 动画
