@@ -101,4 +101,30 @@ extension CircleView {
         shapeLayer.strokeEnd = CGFloat(strokeValue)
         shapeLayer.add(animation, forKey: "strokeEnd")
     }
+    
+    func strokeStarAndEnd(value: CGFloat, duration: TimeInterval) {
+        
+        var strokeValue = value
+        if strokeValue > 1 {
+            
+            strokeValue = 1
+        }else if strokeValue < 0 {
+            
+            strokeValue = 0
+        }
+        let animationStart = CAKeyframeAnimation(keyPath: "strokeEnd")
+        animationStart.duration = duration / 2
+        animationStart.values = KeyFrame(frameCount: Int(duration / 2) * 60).frameValues(fromValue: 0, toValue: strokeValue)
+        shapeLayer.strokeEnd = CGFloat(strokeValue)
+        shapeLayer.add(animationStart, forKey: "strokeEnd")
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration / 2) {
+            let animationEnd = CAKeyframeAnimation(keyPath: "strokeStart")
+            animationEnd.duration = duration / 2
+            animationEnd.values = KeyFrame(frameCount: Int(duration / 2) * 60).frameValues(fromValue: strokeValue, toValue: 0)
+            self.shapeLayer.add(animationEnd, forKey: "strokeStart")
+        }
+        
+        
+    }
 }

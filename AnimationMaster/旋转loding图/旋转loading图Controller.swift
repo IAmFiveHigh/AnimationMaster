@@ -20,6 +20,7 @@ class 旋转loading图Controller: BaseViewController {
         super.viewDidLoad()
 
         mainView.frame = CGRect(origin: view.center, size: CGSize(width: 200, height: 200))
+        mainView.center = view.center
         mainView.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         view.addSubview(mainView)
         
@@ -27,13 +28,18 @@ class 旋转loading图Controller: BaseViewController {
         cycle1 = CircleView(frame: CGRect.zero, lineWidth: 2, lineColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), clockWise: true)
         cycle2 = CircleView(frame: CGRect.zero, lineWidth: 2, lineColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), clockWise: true)
         
+        cycle1.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
+        cycle2.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
+        
         cycle1.set(starAngle: 0, endAngle: 180, animation: true)
         cycle2.set(starAngle: 180, endAngle: 360, animation: true)
         
         mainView.addSubview(cycle1)
         mainView.addSubview(cycle2)
         
+        addRotateAnima()
         createTimer()
+        
     }
     
     private func createTimer() {
@@ -45,11 +51,34 @@ class 旋转loading图Controller: BaseViewController {
     @objc fileprivate func timeAction() {
         
 //        let percent:CGFloat = CGFloat(arc4random_uniform(100) + 1) / 100
-//        
+//
+        let percent:CGFloat = CGFloat(arc4random_uniform(100) + 1) / 100
 //        let circle = view.viewWithTag(10) as! CircleView
-        cycle1.strokeEnd(value: 1, duration: 3.0)
-        cycle2.strokeEnd(value: 1, duration: 3.0)
+//        cycle1.strokeEnd(value: percent, duration: 3.0)
+//        cycle2.strokeEnd(value: percent, duration: 3.0)
+        cycle1.strokeStarAndEnd(value: percent, duration: 3.0)
+        cycle2.strokeStarAndEnd(value: percent, duration: 3.0)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer?.fireDate = Date.distantFuture
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timer?.fireDate = Date.distantPast
+    }
+    
+    private func addRotateAnima() {
+    
+        let anima = CABasicAnimation(keyPath: "transform.rotation")
+        anima.fromValue = 0
+        anima.toValue = CGFloat.pi * 2
+        anima.duration = 3
+        anima.repeatCount = HUGE
+        cycle2.layer.add(anima, forKey: "rotation")
+        cycle1.layer.add(anima, forKey: "rotation")
+    }
     
 }
