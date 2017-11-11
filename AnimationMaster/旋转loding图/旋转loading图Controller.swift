@@ -10,6 +10,12 @@ import UIKit
 
 class 旋转loading图Controller: BaseViewController {
 
+    enum RotationType {
+        case 张开
+        case 收缩
+    }
+    private var type: RotationType = .张开
+    
     private let mainView = UIView()
     private var cycle1: CircleView!
     private var cycle2: CircleView!
@@ -49,15 +55,24 @@ class 旋转loading图Controller: BaseViewController {
     }
     
     @objc fileprivate func timeAction() {
+        var largeD: CGFloat = 0
+        var smallD: CGFloat = 0
+        if type == .张开 {
+            largeD = 1
+            smallD = 0
+            type = .收缩
+        }else {
+            largeD = 0.5
+            smallD = 0.5
+            type = .张开
+        }
         
-//        let percent:CGFloat = CGFloat(arc4random_uniform(100) + 1) / 100
-//
-        let percent:CGFloat = CGFloat(arc4random_uniform(100) + 1) / 100
-//        let circle = view.viewWithTag(10) as! CircleView
-//        cycle1.strokeEnd(value: percent, duration: 3.0)
-//        cycle2.strokeEnd(value: percent, duration: 3.0)
-        cycle1.strokeStarAndEnd(value: percent, duration: 3.0)
-        cycle2.strokeStarAndEnd(value: percent, duration: 3.0)
+        cycle1.strokeEnd(value: largeD, duration: 3.0)
+        cycle2.strokeEnd(value: largeD, duration: 3.0)
+        
+        cycle1.strokeStart(value: smallD, duration: 3.0)
+        cycle2.strokeStart(value: smallD, duration: 3.0)
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
