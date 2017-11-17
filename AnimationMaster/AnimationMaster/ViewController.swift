@@ -40,32 +40,32 @@ class ViewController: UIViewController {
     /// 创建数据源
     fileprivate func createModelArray() {
         
-        func add( _ controller: BaseViewController, name: String) {
+        func add( _ controller: String, name: String) {
             
             dataArray.append(ListModel(name: name, controller: controller))
         }
         
-        add(CABaseController(), name: "基础动画")
-        add(CAKeyFrameController(), name: "关键帧动画")
-        add(AnimatCircleController(), name: "动画圆环")
-        add(ProgressController(), name: "混色字进度动画")
-        add(SelectButtonController(), name: "选中按钮动画")
-        add(LoadingViewController(), name: "加载等待动画")
-        add(NumberAnimationController(), name: "变化数值动画")
-        add(AvatarAnimationController(), name: "头像下拉动画")
-        add(CakeProgressController(), name: "饼状冷却进度动画")
-        add(LoadingImageController(), name: "图片加载动画")
-        add(BounceJellyAnimation(), name: "弹簧果冻动画")
-        add(VisionViewController(), name: "视觉差动画")
-        add(CollectionVisionController(), name: "横向视觉差动画")
-        add(GradientLayerAnimaController(), name: "渐变Mask动画")
-        add(GradientLabelAnimaController(), name: "渐变Label动画")
-        add(WaterDropGatherAnimController(), name: "水滴汇聚动画")
-        add(ScreenFoldAnimationController(), name: "百叶窗特效动画")
-        add(FireEmitterViewController(), name: "烟花粒子特效")
-        add(旋转loading图Controller(), name: "旋转loading")
-        add(咻一咻ViewController(), name: "咻一咻动画")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add("CABaseController", name: "基础动画")
+        add("CAKeyFrameController", name: "关键帧动画")
+        add("AnimatCircleController", name: "动画圆环")
+        add("ProgressController", name: "混色字进度动画")
+        add("SelectButtonController", name: "选中按钮动画")
+        add("LoadingViewController", name: "加载等待动画")
+        add("NumberAnimationController", name: "变化数值动画")
+        add("AvatarAnimationController", name: "头像下拉动画")
+        add("CakeProgressController", name: "饼状冷却进度动画")
+        add("LoadingImageController", name: "图片加载动画")
+        add("BounceJellyAnimation", name: "弹簧果冻动画")
+        add("VisionViewController", name: "视觉差动画")
+        add("CollectionVisionController", name: "横向视觉差动画")
+        add("GradientLayerAnimaController", name: "渐变Mask动画")
+        add("GradientLabelAnimaController", name: "渐变Label动画")
+        add("WaterDropGatherAnimController", name: "水滴汇聚动画")
+        add("ScreenFoldAnimationController", name: "百叶窗特效动画")
+        add("FireEmitterViewController", name: "烟花粒子特效")
+        add("旋转loading图Controller", name: "旋转loading")
+        add("咻一咻ViewController", name: "咻一咻动画")
+        add("BaseViewController", name: "暂时占位Cell")
 
     }
     
@@ -93,7 +93,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        navigationController?.pushViewController(dataArray[indexPath.row].controller, animated: true)
+        let cls = NSClassFromString(getAPPName() + "." + dataArray[indexPath.row].controller)
+        guard let vc = cls as? BaseViewController.Type else { return  }
+        let vcInit = vc.init()
+        navigationController?.pushViewController(vcInit, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -107,6 +110,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         UIView.animateKeyframes(withDuration: 0.1, delay: 0.1, options: .allowUserInteraction, animations: {
             cell.textLabel?.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
+    }
+    
+    func getAPPName() -> String{
+        let nameKey = "CFBundleName"
+        let appName = Bundle.main.object(forInfoDictionaryKey: nameKey) as? String   //这里也是坑，请不要翻译oc的代码，而是去NSBundle类里面看它的api
+        return appName!
     }
     
 }
@@ -152,9 +161,9 @@ class listCell: UITableViewCell {
 struct ListModel {
     
     let name: String
-    let controller: BaseViewController
+    let controller: String
     
-    init(name: String, controller: BaseViewController) {
+    init(name: String, controller: String) {
         self.name = name
         self.controller = controller
     }
