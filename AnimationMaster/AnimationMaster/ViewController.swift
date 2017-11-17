@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         add(ScreenFoldAnimationController(), name: "百叶窗特效动画")
         add(FireEmitterViewController(), name: "烟花粒子特效")
         add(旋转loading图Controller(), name: "旋转loading")
-        add(BaseViewController(), name: "暂时占位Cell")
+        add(咻一咻ViewController(), name: "咻一咻动画")
         add(BaseViewController(), name: "暂时占位Cell")
 
     }
